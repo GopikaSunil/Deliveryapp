@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='addhotel.css') }}">
+    <link rel="shorcut icon" type="image/ico" href="https://i.pinimg.com/originals/34/0c/6a/340c6add7519212185a08d4205eb1965.png"/>
+    <title>Add-Hotel</title>
+</head>
+<body>
+    
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<div class="logo"></div>
+<div class="login-block">
+    <h1>Add a restaurant here!!!</h1>
+		<form action="/addhotel" method="post">
+			<label>Name of the restaurant</label>
+			<input type="text" name="hotelname" value="{{request.form.hotelname}}"><br><br>
+			<div class="submit"><button type="submit">Add restaurant</button></div><br><br>
+		</form>
+		<form action="/additems" method="post">
+			<label>Name of the food item</label>
+			<input type="text" name="itemname" value="{{request.form.itemname}}"><br><br>
+			<div class="submit"><button type="submit">Add food item</button></div><br>
+		</form>
+		<form action="finishedit" method="post">
+			<div class="submit"><button type="submit">Finish process</button></div><br>
+		</form>
+		<form action="/logout" method="post">
+			<div class="submit"><button type="submit">Logout</button></div><br>
+		</form>
+
+
+      
+</div>
+</body>
+</html>

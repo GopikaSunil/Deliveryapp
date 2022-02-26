@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='delorderdetails.css') }}">
+    <link rel="shorcut icon" type="image/ico" href="https://i.pinimg.com/originals/34/0c/6a/340c6add7519212185a08d4205eb1965.png"/>
+    <title>DeliveryDetails</title>
+</head>
+<body>
+    
+<div class="login-block">
+    <table>
+		<tr>
+			<th style="padding-right: 134px;">Order ID</th>
+			<th style="padding-right: 30px;">Item name</th>
+        	<th>Delivery Address</th>
+        	<th style="padding-right: 20px;">Order status</th>
+        	<th>Delivery agent</th>
+        	<th>Location of Agent</th>
+        	<th>Delivery agent phone no</th>
+		</tr>
+	</table>
+	<table class="row_space">
+	{% for item in orderitems %}
+		<tr>
+			<td>{{item.orderid}}</td></a>
+          	<td>{{item.itemname}}</td>
+          	<td>{{item.deliveryaddress}}</td>
+          	<td>{{item.statusoforder}}</td>
+          	<td>{{item.deliveryusername}}</td>
+          	<td>{{item.locationofagent}}</td>
+          	<td>{{item.deliveryuserphoneno}}</td>
+        </tr>
+	{% endfor %}
+	</table><br><br><br>
+	<form action="/orderupdate">
+		<div class="submit"><button type="submit">Update status</button></div><br><br>
+	</form>
+	<form action="/logout" method="post">
+		<div class="submit"><button type="submit">Logout</button></div><br><br>
+	</form>
+	</div>
+
+
+
+      
+</div>
+</body>
+</html>
